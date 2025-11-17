@@ -8,6 +8,9 @@ from flask import Flask, request, jsonify
 import logging
 import io
 import requests  # 添加requests库用于下载图片
+import time
+import uuid
+from datetime import datetime
 
 # 设置日志
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -294,52 +297,148 @@ def identify_exhibit():
         return jsonify({"status": "error", "message": f"识别过程出错: {str(e)}"}), 500
 
 
+# === 修改 identify_by_url 函数 ===
 @app.route('/identify_by_url', methods=['POST'])
 def identify_by_url():
-    """通过URL识别展品 - 专门处理Coze传来的图片URL"""
     try:
-        logger.info("收到URL识别请求")
-
-        # 获取JSON数据
         data = request.get_json()
-        if not data:
-            return jsonify({"status": "error", "message": "没有提供JSON数据"}), 400
-
         image_url = data.get('image_url')
-        if not image_url:
-            return jsonify({"status": "error", "message": "没有提供图片URL"}), 400
 
-        logger.info(f"下载图片URL: {image_url}")
+        # 生成唯一请求标识
+        request_id = str(uuid.uuid4())[:8]
+        timestamp = datetime.now().strftime("%H:%M:%S")
+
+        logger.info(f"🆕 请求 {request_id} | 时间 {timestamp} | 开始识别: {image_url[:50]}...")
 
         # 下载图片
-        headers = {
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
-        }
+        headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'}
         response = requests.get(image_url, headers=headers, timeout=30)
 
         if response.status_code != 200:
-            logger.error(f"下载图片失败: HTTP {response.status_code}")
-            return jsonify({"status": "error", "message": f"下载图片失败: HTTP {response.status_code}"}), 400
+            logger.error(f"❌ 请求 {request_id} | 下载失败: HTTP {response.status_code}")
+            return jsonify({
+                "status": "error",
+                "message": f"下载图片失败: HTTP {response.status_code}",
+                "request_id": request_id
+            }), 400
 
-        # 检查图片大小
-        if len(response.content) == 0:
-            return jsonify({"status": "error", "message": "下载的图片为空"}), 400
-
-        logger.info(f"图片下载成功，大小: {len(response.content)} 字节")
-
-        # 使用通用识别逻辑
+        # 直接使用 identify_from_image_data 函数（你实际使用的函数）
         result = identify_from_image_data(response.content)
+
+        # 如果上面报错，尝试使用 extract_query_features
+        # result = process_image_recognition(response.content, request_id)
+
+        # 增强返回结果
+        if result['status'] == 'success':
+            result.update({
+                'request_id': request_id,
+                'timestamp': timestamp,
+                'is_new_request': True,
+                'cache_used': False,
+                'message': f"🆕 识别成功: {result['exhibit_id']} (请求ID: {request_id})"
+            })
+            logger.info(f"✅ 请求 {request_id} | 识别成功: {result['exhibit_id']}")
+        else:
+            result.update({
+                'request_id': request_id,
+                'timestamp': timestamp,
+                'is_new_request': True
+            })
+            logger.info(f"❌ 请求 {request_id} | 识别失败: {result.get('message', '未知错误')}")
+
         return jsonify(result)
 
-    except requests.exceptions.Timeout:
-        logger.error("下载图片超时")
-        return jsonify({"status": "error", "message": "下载图片超时"}), 408
-    except requests.exceptions.RequestException as e:
-        logger.error(f"网络请求错误: {e}")
-        return jsonify({"status": "error", "message": f"网络请求错误: {str(e)}"}), 500
     except Exception as e:
-        logger.error(f"URL识别过程出错: {e}")
-        return jsonify({"status": "error", "message": f"识别过程出错: {str(e)}"}), 500
+        logger.error(f"💥 请求处理异常: {e}")
+        return jsonify({
+            "status": "error",
+            "message": f"识别过程出错: {str(e)}",
+            "request_id": request_id if 'request_id' in locals() else 'unknown'
+        }), 500
+
+
+# === 新增：统一的图片识别处理函数 ===
+def process_image_recognition(image_data, request_id):
+    """统一的图片识别处理"""
+    try:
+        # 提取特征
+        query_vector = extract_query_features(image_data)
+
+        if query_vector is None:
+            return {"status": "error", "message": "特征提取失败"}
+
+        # 搜索相似展品
+        results = collection.query(
+            query_embeddings=[query_vector],
+            n_results=5,
+            include=["metadatas", "distances"]
+        )
+
+        if results and results['metadatas']:
+            metadatas = results['metadatas'][0]
+            distances = results['distances'][0]
+
+            # 将距离转换为相似度分数
+            similarities = [1 - distance for distance in distances]
+
+            # 找到相似度最高的结果
+            best_match_idx = np.argmax(similarities)
+            best_similarity = similarities[best_match_idx]
+            best_metadata = metadatas[best_match_idx]
+
+            # 降低阈值到0.3
+            if best_similarity >= 0.3:
+                return {
+                    "status": "success",
+                    "exhibit_id": best_metadata["exhibit_id"],
+                    "confidence": round(best_similarity, 4),
+                    "category": best_metadata.get("category", ""),
+                    "similarities": similarities,  # 返回所有相似度用于调试
+                    "all_matches": [
+                        {
+                            "exhibit_id": meta["exhibit_id"],
+                            "confidence": round(sim, 4)
+                        }
+                        for meta, sim in zip(metadatas, similarities)
+                    ]
+                }
+
+        return {
+            "status": "not_found",
+            "exhibit_id": None,
+            "confidence": 0.0,
+            "message": "未找到匹配的展品"
+        }
+
+    except Exception as e:
+        logger.error(f"特征识别过程出错: {e}")
+        return {"status": "error", "message": f"识别过程出错: {str(e)}"}
+
+
+@app.route('/debug_clear_cache', methods=['POST'])
+def debug_clear_cache():
+    """清理可能的缓存"""
+    try:
+        # 如果有任何全局缓存变量，在这里清理
+        global feature_cache
+        if 'feature_cache' in globals():
+            feature_cache.clear()
+
+        # 清理可能的函数缓存
+        import functools
+        if hasattr(extract_query_features, 'cache'):
+            extract_query_features.cache_clear()
+
+        return jsonify({
+            "status": "success",
+            "message": "缓存已清理",
+            "timestamp": datetime.now().isoformat()
+        })
+    except Exception as e:
+        return jsonify({
+            "status": "error",
+            "message": f"清理缓存失败: {str(e)}"
+        })
 
 
 @app.route('/health', methods=['GET'])
