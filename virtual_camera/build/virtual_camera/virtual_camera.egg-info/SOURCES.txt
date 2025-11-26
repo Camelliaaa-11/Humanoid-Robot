@@ -1,0 +1,14 @@
+package.xml
+setup.cfg
+setup.py
+build/virtual_camera/virtual_camera.egg-info/PKG-INFO
+build/virtual_camera/virtual_camera.egg-info/SOURCES.txt
+build/virtual_camera/virtual_camera.egg-info/dependency_links.txt
+build/virtual_camera/virtual_camera.egg-info/entry_points.txt
+build/virtual_camera/virtual_camera.egg-info/requires.txt
+build/virtual_camera/virtual_camera.egg-info/top_level.txt
+build/virtual_camera/virtual_camera.egg-info/zip-safe
+resource/virtual_camera
+virtual_camera/__init__.py
+virtual_camera/rviz_image_capture_node.py
+virtual_camera/virtual_camera_node.py
