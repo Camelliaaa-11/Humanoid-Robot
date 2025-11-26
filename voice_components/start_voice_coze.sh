@@ -31,7 +31,7 @@ sleep 3
 
 # 启动TTS转换节点
 echo "启动TTS转换节点..."
-python3 respond_to_mp3.py &
+python3 text_to_speech.py &
 TTS_PID=$!
 
 echo "等待系统启动..."
@@ -43,7 +43,7 @@ echo "Coze处理PID: $COZE_PID"
 echo "TTS转换PID: $TTS_PID"
 echo ""
 echo "现在可以对机器人说话，系统会自动："
-echo "1. 识别语音 → 2. 调用Coze → 3. 生成MP3回复"
+echo "1. 识别语音 → 2. 调用Coze → 3. 文本转语音播放"
 echo "按 Ctrl+C 停止系统"
 
 wait
