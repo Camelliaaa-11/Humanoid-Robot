@@ -1,0 +1,58 @@
+[0.000000] (-) TimerEvent: {}
+[0.000300] (virtual_camera) JobQueued: {'identifier': 'virtual_camera', 'dependencies': OrderedDict()}
+[0.000360] (virtual_camera) JobStarted: {'identifier': 'virtual_camera'}
+[0.103471] (-) TimerEvent: {}
+[0.212458] (-) TimerEvent: {}
+[0.320619] (-) TimerEvent: {}
+[0.428863] (-) TimerEvent: {}
+[0.536173] (-) TimerEvent: {}
+[0.636934] (-) TimerEvent: {}
+[0.735963] (virtual_camera) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', 'build/virtual_camera', 'build', '--build-base', '/home/wwx/ros2_ws/src/virtual_camera/build/virtual_camera/build', 'install', '--record', '/home/wwx/ros2_ws/src/virtual_camera/build/virtual_camera/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/home/wwx/ros2_ws/src/virtual_camera', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'LANGUAGE': 'zh_CN:zh', 'USER': 'wwx', 'XDG_SESSION_TYPE': 'wayland', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib', 'HOME': '/home/wwx', 'OLDPWD': '/home/wwx/ros2_ws', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'SYSTEMD_EXEC_PID': '1631', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/wwx/ros2_ws/install', 'ROS_DISTRO': 'humble', 'LOGNAME': 'wwx', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'wwx', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/wwx-virtual-machine:@/tmp/.ICE-unix/1603,unix/wwx-virtual-machine:/tmp/.ICE-unix/1603', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/9d1b643d_ebaa_4944_8aa3_f88531d0d9db', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'LANG': 'zh_CN.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.5H0LG3', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'GNOME_TERMINAL_SERVICE': ':1.114', 'SSH_AGENT_LAUNCHER': 'gnome-keyring', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/wwx/ros2_ws/install/virtual_camera:/opt/ros/humble', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/wwx/ros2_ws/src/virtual_camera/build/virtual_camera', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/wwx/ros2_ws/src/virtual_camera/build/virtual_camera/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/wwx/ros2_ws/src/virtual_camera/install/virtual_camera/lib/python3.10/site-packages:/home/wwx/ros2_ws/install/virtual_camera/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'COLCON': '1', 'VTE_VERSION': '6800'}, 'shell': False}
+[0.739388] (-) TimerEvent: {}
+[0.847295] (-) TimerEvent: {}
+[0.954358] (-) TimerEvent: {}
+[0.991831] (virtual_camera) StdoutLine: {'line': b'running egg_info\n'}
+[0.992055] (virtual_camera) StdoutLine: {'line': b'creating build/virtual_camera/virtual_camera.egg-info\n'}
+[0.992119] (virtual_camera) StdoutLine: {'line': b'writing build/virtual_camera/virtual_camera.egg-info/PKG-INFO\n'}
+[0.993213] (virtual_camera) StdoutLine: {'line': b'writing dependency_links to build/virtual_camera/virtual_camera.egg-info/dependency_links.txt\n'}
+[0.993531] (virtual_camera) StdoutLine: {'line': b'writing entry points to build/virtual_camera/virtual_camera.egg-info/entry_points.txt\n'}
+[0.993671] (virtual_camera) StdoutLine: {'line': b'writing requirements to build/virtual_camera/virtual_camera.egg-info/requires.txt\n'}
+[0.993730] (virtual_camera) StdoutLine: {'line': b'writing top-level names to build/virtual_camera/virtual_camera.egg-info/top_level.txt\n'}
+[0.993778] (virtual_camera) StdoutLine: {'line': b"writing manifest file 'build/virtual_camera/virtual_camera.egg-info/SOURCES.txt'\n"}
+[0.994456] (virtual_camera) StdoutLine: {'line': b"reading manifest file 'build/virtual_camera/virtual_camera.egg-info/SOURCES.txt'\n"}
+[0.995172] (virtual_camera) StdoutLine: {'line': b"writing manifest file 'build/virtual_camera/virtual_camera.egg-info/SOURCES.txt'\n"}
+[0.995485] (virtual_camera) StdoutLine: {'line': b'running build\n'}
+[0.995617] (virtual_camera) StdoutLine: {'line': b'running build_py\n'}
+[0.995803] (virtual_camera) StdoutLine: {'line': b'creating /home/wwx/ros2_ws/src/virtual_camera/build/virtual_camera/build\n'}
+[0.995889] (virtual_camera) StdoutLine: {'line': b'creating /home/wwx/ros2_ws/src/virtual_camera/build/virtual_camera/build/lib\n'}
+[0.995974] (virtual_camera) StdoutLine: {'line': b'creating /home/wwx/ros2_ws/src/virtual_camera/build/virtual_camera/build/lib/virtual_camera\n'}
+[0.996025] (virtual_camera) StdoutLine: {'line': b'copying virtual_camera/rviz_image_capture_node.py -> /home/wwx/ros2_ws/src/virtual_camera/build/virtual_camera/build/lib/virtual_camera\n'}
+[0.996106] (virtual_camera) StdoutLine: {'line': b'copying virtual_camera/virtual_camera_node.py -> /home/wwx/ros2_ws/src/virtual_camera/build/virtual_camera/build/lib/virtual_camera\n'}
+[0.996160] (virtual_camera) StdoutLine: {'line': b'copying virtual_camera/__init__.py -> /home/wwx/ros2_ws/src/virtual_camera/build/virtual_camera/build/lib/virtual_camera\n'}
+[0.996265] (virtual_camera) StdoutLine: {'line': b'running install\n'}
+[0.996823] (virtual_camera) StdoutLine: {'line': b'running install_lib\n'}
+[0.997560] (virtual_camera) StdoutLine: {'line': b'creating /home/wwx/ros2_ws/src/virtual_camera/install/virtual_camera/lib/python3.10/site-packages/virtual_camera\n'}
+[0.997695] (virtual_camera) StdoutLine: {'line': b'copying /home/wwx/ros2_ws/src/virtual_camera/build/virtual_camera/build/lib/virtual_camera/rviz_image_capture_node.py -> /home/wwx/ros2_ws/src/virtual_camera/install/virtual_camera/lib/python3.10/site-packages/virtual_camera\n'}
+[1.007687] (virtual_camera) StdoutLine: {'line': b'copying /home/wwx/ros2_ws/src/virtual_camera/build/virtual_camera/build/lib/virtual_camera/virtual_camera_node.py -> /home/wwx/ros2_ws/src/virtual_camera/install/virtual_camera/lib/python3.10/site-packages/virtual_camera\n'}
+[1.007852] (virtual_camera) StdoutLine: {'line': b'copying /home/wwx/ros2_ws/src/virtual_camera/build/virtual_camera/build/lib/virtual_camera/__init__.py -> /home/wwx/ros2_ws/src/virtual_camera/install/virtual_camera/lib/python3.10/site-packages/virtual_camera\n'}
+[1.008332] (virtual_camera) StdoutLine: {'line': b'byte-compiling /home/wwx/ros2_ws/src/virtual_camera/install/virtual_camera/lib/python3.10/site-packages/virtual_camera/rviz_image_capture_node.py to rviz_image_capture_node.cpython-310.pyc\n'}
+[1.009488] (virtual_camera) StdoutLine: {'line': b'byte-compiling /home/wwx/ros2_ws/src/virtual_camera/install/virtual_camera/lib/python3.10/site-packages/virtual_camera/virtual_camera_node.py to virtual_camera_node.cpython-310.pyc\n'}
+[1.010352] (virtual_camera) StdoutLine: {'line': b'byte-compiling /home/wwx/ros2_ws/src/virtual_camera/install/virtual_camera/lib/python3.10/site-packages/virtual_camera/__init__.py to __init__.cpython-310.pyc\n'}
+[1.010564] (virtual_camera) StdoutLine: {'line': b'running install_data\n'}
+[1.010662] (virtual_camera) StdoutLine: {'line': b'creating /home/wwx/ros2_ws/src/virtual_camera/install/virtual_camera/share/ament_index\n'}
+[1.010782] (virtual_camera) StdoutLine: {'line': b'creating /home/wwx/ros2_ws/src/virtual_camera/install/virtual_camera/share/ament_index/resource_index\n'}
+[1.010869] (virtual_camera) StdoutLine: {'line': b'creating /home/wwx/ros2_ws/src/virtual_camera/install/virtual_camera/share/ament_index/resource_index/packages\n'}
+[1.010979] (virtual_camera) StdoutLine: {'line': b'copying resource/virtual_camera -> /home/wwx/ros2_ws/src/virtual_camera/install/virtual_camera/share/ament_index/resource_index/packages\n'}
+[1.011086] (virtual_camera) StdoutLine: {'line': b'copying package.xml -> /home/wwx/ros2_ws/src/virtual_camera/install/virtual_camera/share/virtual_camera\n'}
+[1.011139] (virtual_camera) StdoutLine: {'line': b'running install_egg_info\n'}
+[1.013163] (virtual_camera) StdoutLine: {'line': b'Copying build/virtual_camera/virtual_camera.egg-info to /home/wwx/ros2_ws/src/virtual_camera/install/virtual_camera/lib/python3.10/site-packages/virtual_camera-0.0.0-py3.10.egg-info\n'}
+[1.014085] (virtual_camera) StdoutLine: {'line': b'running install_scripts\n'}
+[1.037774] (virtual_camera) StdoutLine: {'line': b'Installing coze_final_upload_node script to /home/wwx/ros2_ws/src/virtual_camera/install/virtual_camera/lib/virtual_camera\n'}
+[1.037963] (virtual_camera) StdoutLine: {'line': b'Installing image_capture_node script to /home/wwx/ros2_ws/src/virtual_camera/install/virtual_camera/lib/virtual_camera\n'}
+[1.038027] (virtual_camera) StdoutLine: {'line': b'Installing rviz_image_capture_node script to /home/wwx/ros2_ws/src/virtual_camera/install/virtual_camera/lib/virtual_camera\n'}
+[1.038077] (virtual_camera) StdoutLine: {'line': b'Installing virtual_camera_node script to /home/wwx/ros2_ws/src/virtual_camera/install/virtual_camera/lib/virtual_camera\n'}
+[1.038397] (virtual_camera) StdoutLine: {'line': b"writing list of installed files to '/home/wwx/ros2_ws/src/virtual_camera/build/virtual_camera/install.log'\n"}
+[1.059353] (-) TimerEvent: {}
+[1.061427] (virtual_camera) CommandEnded: {'returncode': 0}
+[1.087040] (virtual_camera) JobEnded: {'identifier': 'virtual_camera', 'rc': 0}
+[1.088164] (-) EventReactorShutdown: {}

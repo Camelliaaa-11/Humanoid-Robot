@@ -1,0 +1,43 @@
+[0.739s] Invoking command in '/home/wwx/ros2_ws/src/virtual_camera': PYTHONPATH=/home/wwx/ros2_ws/src/virtual_camera/build/virtual_camera/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/wwx/ros2_ws/src/virtual_camera/install/virtual_camera/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base build/virtual_camera build --build-base /home/wwx/ros2_ws/src/virtual_camera/build/virtual_camera/build install --record /home/wwx/ros2_ws/src/virtual_camera/build/virtual_camera/install.log --single-version-externally-managed install_data
+[0.992s] running egg_info
+[0.992s] creating build/virtual_camera/virtual_camera.egg-info
+[0.992s] writing build/virtual_camera/virtual_camera.egg-info/PKG-INFO
+[0.993s] writing dependency_links to build/virtual_camera/virtual_camera.egg-info/dependency_links.txt
+[0.993s] writing entry points to build/virtual_camera/virtual_camera.egg-info/entry_points.txt
+[0.993s] writing requirements to build/virtual_camera/virtual_camera.egg-info/requires.txt
+[0.993s] writing top-level names to build/virtual_camera/virtual_camera.egg-info/top_level.txt
+[0.993s] writing manifest file 'build/virtual_camera/virtual_camera.egg-info/SOURCES.txt'
+[0.994s] reading manifest file 'build/virtual_camera/virtual_camera.egg-info/SOURCES.txt'
+[0.995s] writing manifest file 'build/virtual_camera/virtual_camera.egg-info/SOURCES.txt'
+[0.995s] running build
+[0.995s] running build_py
+[0.995s] creating /home/wwx/ros2_ws/src/virtual_camera/build/virtual_camera/build
+[0.996s] creating /home/wwx/ros2_ws/src/virtual_camera/build/virtual_camera/build/lib
+[0.996s] creating /home/wwx/ros2_ws/src/virtual_camera/build/virtual_camera/build/lib/virtual_camera
+[0.996s] copying virtual_camera/rviz_image_capture_node.py -> /home/wwx/ros2_ws/src/virtual_camera/build/virtual_camera/build/lib/virtual_camera
+[0.996s] copying virtual_camera/virtual_camera_node.py -> /home/wwx/ros2_ws/src/virtual_camera/build/virtual_camera/build/lib/virtual_camera
+[0.996s] copying virtual_camera/__init__.py -> /home/wwx/ros2_ws/src/virtual_camera/build/virtual_camera/build/lib/virtual_camera
+[0.996s] running install
+[0.997s] running install_lib
+[0.997s] creating /home/wwx/ros2_ws/src/virtual_camera/install/virtual_camera/lib/python3.10/site-packages/virtual_camera
+[0.997s] copying /home/wwx/ros2_ws/src/virtual_camera/build/virtual_camera/build/lib/virtual_camera/rviz_image_capture_node.py -> /home/wwx/ros2_ws/src/virtual_camera/install/virtual_camera/lib/python3.10/site-packages/virtual_camera
+[1.007s] copying /home/wwx/ros2_ws/src/virtual_camera/build/virtual_camera/build/lib/virtual_camera/virtual_camera_node.py -> /home/wwx/ros2_ws/src/virtual_camera/install/virtual_camera/lib/python3.10/site-packages/virtual_camera
+[1.008s] copying /home/wwx/ros2_ws/src/virtual_camera/build/virtual_camera/build/lib/virtual_camera/__init__.py -> /home/wwx/ros2_ws/src/virtual_camera/install/virtual_camera/lib/python3.10/site-packages/virtual_camera
+[1.008s] byte-compiling /home/wwx/ros2_ws/src/virtual_camera/install/virtual_camera/lib/python3.10/site-packages/virtual_camera/rviz_image_capture_node.py to rviz_image_capture_node.cpython-310.pyc
+[1.009s] byte-compiling /home/wwx/ros2_ws/src/virtual_camera/install/virtual_camera/lib/python3.10/site-packages/virtual_camera/virtual_camera_node.py to virtual_camera_node.cpython-310.pyc
+[1.010s] byte-compiling /home/wwx/ros2_ws/src/virtual_camera/install/virtual_camera/lib/python3.10/site-packages/virtual_camera/__init__.py to __init__.cpython-310.pyc
+[1.010s] running install_data
+[1.010s] creating /home/wwx/ros2_ws/src/virtual_camera/install/virtual_camera/share/ament_index
+[1.010s] creating /home/wwx/ros2_ws/src/virtual_camera/install/virtual_camera/share/ament_index/resource_index
+[1.011s] creating /home/wwx/ros2_ws/src/virtual_camera/install/virtual_camera/share/ament_index/resource_index/packages
+[1.011s] copying resource/virtual_camera -> /home/wwx/ros2_ws/src/virtual_camera/install/virtual_camera/share/ament_index/resource_index/packages
+[1.011s] copying package.xml -> /home/wwx/ros2_ws/src/virtual_camera/install/virtual_camera/share/virtual_camera
+[1.011s] running install_egg_info
+[1.013s] Copying build/virtual_camera/virtual_camera.egg-info to /home/wwx/ros2_ws/src/virtual_camera/install/virtual_camera/lib/python3.10/site-packages/virtual_camera-0.0.0-py3.10.egg-info
+[1.014s] running install_scripts
+[1.037s] Installing coze_final_upload_node script to /home/wwx/ros2_ws/src/virtual_camera/install/virtual_camera/lib/virtual_camera
+[1.038s] Installing image_capture_node script to /home/wwx/ros2_ws/src/virtual_camera/install/virtual_camera/lib/virtual_camera
+[1.038s] Installing rviz_image_capture_node script to /home/wwx/ros2_ws/src/virtual_camera/install/virtual_camera/lib/virtual_camera
+[1.038s] Installing virtual_camera_node script to /home/wwx/ros2_ws/src/virtual_camera/install/virtual_camera/lib/virtual_camera
+[1.038s] writing list of installed files to '/home/wwx/ros2_ws/src/virtual_camera/build/virtual_camera/install.log'
+[1.061s] Invoked command in '/home/wwx/ros2_ws/src/virtual_camera' returned '0': PYTHONPATH=/home/wwx/ros2_ws/src/virtual_camera/build/virtual_camera/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/wwx/ros2_ws/src/virtual_camera/install/virtual_camera/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base build/virtual_camera build --build-base /home/wwx/ros2_ws/src/virtual_camera/build/virtual_camera/build install --record /home/wwx/ros2_ws/src/virtual_camera/build/virtual_camera/install.log --single-version-externally-managed install_data
