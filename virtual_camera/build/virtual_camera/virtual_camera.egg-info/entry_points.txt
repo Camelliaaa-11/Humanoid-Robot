@@ -1,0 +1,6 @@
+[console_scripts]
+coze_final_upload_node = virtual_camera.coze_final_upload_node:main
+image_capture_node = virtual_camera.image_capture_node:main
+rviz_image_capture_node = virtual_camera.rviz_image_capture_node:main
+virtual_camera_node = virtual_camera.virtual_camera_node:main
+
